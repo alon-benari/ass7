@@ -1,0 +1,41 @@
+<div>
+ <h1>Please login</h1>
+<form ng-submit = "processForm()" method="POST">
+<input type="text" placeholder="login name" ng-model = "formData.login" required> <br>
+<input type="password" placeholder="password" ng-model = "formData.pswd" id = "pswd" required> <br>
+<button type="submit"> Submit</button>
+</form>
+<br>
+<br>
+<p>
+   
+    login_name:{{formData.login}} <br>
+    pswd: {{formData.pswd}}
+    <br>
+    posting:{{formData.posting}}
+    <br>
+    messages:{{formData.error}}
+  </p>
+<button ng-click = "register()">register</button>
+
+
+<div ng-show = "register.registerMe">
+  <h2> registration, please fill the following <br></h2>
+  <h5>(All fields are required)</h5>
+  <form name = "registrationForm" ng-submit = processRegistration() method = "POST">
+    <input type="text" placeholder="first name" ng-model = "register.firstName" required> <br>
+    <input type="text" placeholder="last name" ng-model = "register.lastName" required> <br>
+    <input type="text" placeholder="choose login name" ng-model = "register.loginName" required> <br>
+    <input type="password" placeholder="enter password" ng-model = "register.password0" required> <br>
+    <input type="password" placeholder="re-enter password" ng-model = "register.password1" required> <br>
+    <input type="text" placeholder="location" ng-model = "register.location" required> <br>
+    <input type="text" placeholder="description" ng-model = "register.description" required> <br>
+    <input type="text" placeholder="occupation" ng-model = "register.occupation" required> <br>
+    <button type="submit" > register me </button>
+  </form>
+ 
+</div>
+{{register.err}} <br>
+<!-- action="http://localhost:3000/admin/login"  -->
+
+</div>

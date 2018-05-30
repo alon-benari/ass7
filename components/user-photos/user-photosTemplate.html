@@ -1,0 +1,30 @@
+<div class = "user-photos" ng-repeat = "x in main.photoData">
+  <pre>
+    {{x || JSON}}
+  </pre>
+  
+  <div id = "{{x._id}}">
+    <img  ng-src = {{'images/'+x.file_name}}>
+    <p>creation date: {{x.date_time}}</p>
+    <form ng-submit = "addComment()" method = "POST" >
+      <input type="text" placeholder="enter new comment (120 chars.)" ng-model = "addComment.newComment" size = "120"><br>
+      <button  id = "{{x._id}}"type = "submit" >add new comment</button>
+   </form>
+  
+   <div ng-repeat = "c in x.comments">
+     <p id = "{{x._id}}" >
+       
+        {{'comment: '+c.comment}} <br>
+        {{'comment date: '+ c.date_time}} <br>
+     </p>
+     <a href="#!/users/{{c.user._id}}"> {{'comment posted by: '+c.user.first_name+' '+c.user.last_name}}</a>
+   </div>
+   <br>
+  </div>
+   
+   <!-- <form ng-submit = "addComment()" method = "POST" >
+      <input type="text" placeholder="enter new comment (120 chars.)" ng-model = "addComment.newComment" size = "120"><br>
+      <button type = "submit">add new comment</button>
+
+   </form> -->
+</div>

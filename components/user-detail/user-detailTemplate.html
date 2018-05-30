@@ -1,0 +1,19 @@
+<div class = "user-detail" >
+  <p>
+    User details:
+  </p> 
+  <!-- <pre>{{main.usersModel | json }} </pre>  -->
+   <ul ng-repeat=" (key, value) in main.usersModel">
+    <li >
+      {{key+':' +' '+ value}}
+    </li>
+  </ul>
+
+  <!-- <table>
+    <tr ng-repeat = (key, value) in main.users.Model>
+       <td>key</td>
+       
+    </tr>
+  </table> -->
+  <a href="#!/photos/{{main.uId}}"  >  {{ 'Photos of : '+main.usersModel.first_name+' '+main.usersModel.last_name}}</a>
+</div>

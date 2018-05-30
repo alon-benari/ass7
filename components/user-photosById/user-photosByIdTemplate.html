@@ -1,0 +1,39 @@
+
+<div >
+<p>
+  {{typeof(main.photoDataById)}} </br>
+</p>
+  
+    <img ng-src = {{'images/'+main.photoDataById.file_name}}>
+    <p>
+      {{'created: '+main.photoDataById.date_time}}
+    </p>
+    <ul ng-repeat =  "com in main.photoDataById.comments">
+       <li >
+         {{'comment: '+ com.comment}}
+        </li>
+        <li>
+          {{'comment date: '+ com.date_time}}
+        </li>
+        <li>
+          <a href = "#!/users/{{com.user._id}}"> {{'Comment posted by: '+com.user.first_name+' '+com.user.last_name}}</a>
+        </li>
+    </ul>
+    <div class = "container" >
+        <div >
+          <button id = "prevPhoto" ng-click = "prevPhoto()">
+          previous
+          </button>
+      </div>
+    
+      <div >
+        <button id = "nextPhoto" ng-click = "nextPhoto()">
+        next
+      </button>
+      </div>
+    </div>
+   
+   
+   
+    
+
